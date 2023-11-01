@@ -1,28 +1,4 @@
-/*---------------- */
-/* Custom Properties */
-/* --------------- */
-:root {
-    --clr-dark: 230 35% 7%;
-    --clr-light: 231 77% 90%;
-    --clr-white: 0 0% 100%;
 
-    /* ---fonts--- */
-    --fs-900: 9.375rem;
-    --fs-800: 6.25rem;
-    --fs-700: 3.5rem;
-    --fs-600: 2rem;
-    --fs-500: 1.75;
-    --fs-400: 1.125;
-    --fs-300: 1rem;
-    --fs-200: 0.875rem;
-
-    /* ---font families--- */
-    --ff-serif: "Bellefair", serif;
-    --ff-sans-con: "Barlow Condensed", sans-serif;
-    --ff-sans-normal: "Barlow", sans-serif;
-
-
-}
 
 /* Box sizing rules */
 *,
@@ -45,16 +21,6 @@ dd {
   margin-block-end: 0;
 }
 
-/* custom list */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p{
-  font-weight: 400;
-}
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
@@ -69,8 +35,6 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  font-size: var(--fs-400);
-  font-family: var(--ff-sans-normal);
   min-height: 100vh;  
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -119,15 +83,6 @@ BODY
 /* Utility Classes */
 /* --------------- */
 
-.flex {
-  display: flex;
-}
-
-.grid {
-  display: grid;
-  gap: var(--gap, 1rem);
-}
-
 .container {
    max-width: 80rem;
    padding-inline: 2em;
@@ -145,36 +100,6 @@ BODY
    white-space: nowrap; /* added line */
    border: 0;
 }
-
-
-/* ---- color ---- */
-.bg-dark { background-color: hsl( var(--clr-dark) );}
-.bg-accent { background-color: hsl( var(--clr-light) );}
-.bg-white { background-color: hsl( var(--clr-white) );}
-
-.text-dark { color: hsl( var(--clr-dark) );}
-.text-accent { color: hsl( var(--clr-light) );}
-.text-white { color: hsl( var(--clr-white) );}
-
-/* ---- typography ---- */
-.ff-serif{ font-family: var(--ff-serif);}
-.ff-sans-con{ font-family: var(--ff-sans-con);}
-.ff-sans-normal{ font-family: var(--ff-sans-normal);}
-
-.letter-spacing-1{letter-spacing: 4.75px}
-.letter-spacing-2{letter-spacing: 2.7px}
-.letter-spacing-3{letter-spacing: 2.35px}
-
-.uppercase{text-transform: uppercase;}
-
-.fs-900{font-size: var(--fs-900);}
-.fs-800{font-size: var(--fs-800);}
-.fs-700{font-size: var(--fs-700);}
-.fs-600{font-size: var(--fs-600);}
-.fs-500{font-size: var(--fs-500);}
-.fs-400{font-size: var(--fs-400);}
-.fs-300{font-size: var(--fs-300);}
-.fs-200{font-size: var(--fs-200);}
 
 
 /* ---- color ---- */
@@ -364,7 +289,224 @@ button:hover{
 /*---------------- */
 /* FOOTER */
 /* --------------- */
+@media screen and (max-width: 770px) {
+    .title-text h1{  
+    font-size: 35px;    
+    }
+    .service-title{
+      flex-basis: 100%;
+    }
+    .service-img{
+      flex-basis: 100%;
+      margin: auto;
+    }
+    .service-img img{
+      width: 100%;
+    }
+}
 
+/*--- delivery ---*/
+#delivery{
+     width: 100%;
+     padding: 70px 0;
+     background: #efefef;
+}
+.service-box{
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: auto;
+}
+.single-service{
+      flex-basis: 48%;
+      text-align: center;
+      border-radius: 7px;
+      margin-bottom: 20px;
+      color: #fff;
+      position: relative;
+}
+.single-service img{
+      width: 100%;
+      border-radius: 7px;
+}
+.overlay{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      border-radius: 7px;
+      cursor: pointer;
+      background: linear-gradient(rgba(0,0,0,0.5),#4CAF50);
+      opacity: 0;
+      transition: 1s;
+}
+.single-service:hover .overlay{
+      opacity: 1;
+}
+.delivery-desc{
+      width: 80%;
+      position: absolute;
+      bottom: 40%;
+      left: 50%;
+      opacity: 0;
+      transform: translateX(-50%);     
+      transition: 1s;
+}
+hr{
+      background: #fff;
+      height: 2px;
+      border: 0;
+      margin: 15px auto;
+      width: 60%;
+}
+.delivery-desc p{
+     font-size: 14px;
 
+}
+.single-service:hover .delivery-desc{
+     bottom: 40%;
+     opacity: 1;
+}
+@media screen and (max-width: 770px) {
+      .single-service{
+      flex-basis: 100%;
+      margin-bottom: 30px;
+      }
+      .delivery-desc p{
+        font-size: 12px;
+    }
+    hr{
+      margin: 5px auto;
+    }
+    .single-service:hover .delivery-desc{
+      bottom: 25% !important;
+    }
+}
 
+/*--- testimonial ----*/
+#testimonial{
+      width: 100%;
+      padding: 70px 0;
+}
+.testimonial-row{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 80%;
+      margin: auto;
 
+}
+.testimonial-col{
+      flex-basis: 28%;
+      margin-bottom: 30px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px 3px #4CAF50;
+      cursor: pointer;
+      transition: transform .5s;
+}
+.testimonial-col p{
+      font-size: 14px;
+}
+.user{
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+}
+.user img{
+      width: 40px;
+      margin-right: 20px;
+      border-radius: 3px;
+}
+.user-info .fa-brands {
+      margin-left: 10px;
+      color: #070f13;
+      font-size: 20px;
+}
+.user-info small{
+      color: #4CAF50;
+    }
+.testimonial-col:hover{
+     transform: translateY(7px);
+}
+@media screen and (max-width: 770px) {
+    .testimonial-col{
+      flex-basis: 100%;
+  }
+}
+#footer{
+      padding: 100px 0 20px;
+      background: #efefef;
+      position: relative;
+}
+.footer-row{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+}
+.footer-left,.footer-right{
+      flex-basis: 45%;
+      padding: 10px;
+      margin-bottom: 20px;
+}
+.footer-right{
+      text-align: right;
+}
+.footer-row h1{
+      margin: 10px 0;
+}
+.footer-row p{
+      line-height: 35px;
+}
+.footer-left .fa,.footer-right .fa{
+      font-size: 20px;
+      color: #4CAF50;
+      margin: 10px;
+}
+.footer-img{
+      max-width: 370px;
+      opacity: 0.1;
+      position: absolute;
+      left: 50%;
+      top: 35%;
+      transform: translate(-50%,-50%);
+}
+.social-links{
+      text-align: center;
+}
+.social-links .fa-brands{
+      height: 40px;
+      width: 40px;
+      font-size: 20px;
+      line-height: 40px;
+      border: 1px solid #4CAF50;
+      margin: 40px 5px 0;
+      color: #4CAF50;
+      cursor: pointer;
+      transition: .5s;
+}
+.social-links .fa-brands:hover{
+      color: #fff;
+      background: #4CAF50;
+      transform: translateY(-7px);
+      cursor: pointer;
+
+}
+.social-links p{
+      font-size: 12px;
+      margin-top: 20px;
+
+}
+@media screen and (max-width: 770px) {
+    .footer-left,.footer-right{
+      flex-basis: 100%;
+      font-size: 14px;
+  }
+    .footer-img{
+      top: 25%;
+   }
+}
